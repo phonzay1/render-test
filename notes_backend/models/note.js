@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-require('dotenv').config();
+require('dotenv').config()
 
 mongoose.set('strictQuery', false)
 
@@ -15,14 +15,14 @@ mongoose.connect(url)
     console.log('error connecting to MongoDB:', error.message)
   })
 
-  const noteSchema = new mongoose.Schema({
-    content: {
-      type: String,
-      minLength: 5,
-      required: true
-    },
-    important: Boolean
-  })
+const noteSchema = new mongoose.Schema({
+  content: {
+    type: String,
+    minLength: 5,
+    required: true
+  },
+  important: Boolean
+})
 
 noteSchema.set('toJSON', {
   transform: (document, returnedObject) => {
